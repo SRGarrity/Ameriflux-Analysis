@@ -10,11 +10,11 @@ server <- function(input, output) {
     
     if(input$select == "365 days")
     {
-      plot(stl(dNEEdaily, s.window="periodic", t.window=365))
+      plot(stl(dNEEdaily, s.window="periodic", t.window=365),labels = c("NEE","Seasonal","Trend","Residual"))
     }
     if(input$select == "731 days")
     {
-      plot(stl(dNEEdaily, s.window="periodic", t.window=731))
+      plot(stl(dNEEdaily, s.window="periodic", t.window=731),labels = c("NEE","Seasonal","Trend","Residual"))
     }
   })
   

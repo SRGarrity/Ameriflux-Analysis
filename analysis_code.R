@@ -6,8 +6,6 @@ library(lubridate)
 library(anytime)
 library(imputeTS)
 library(shiny)
-library(shinyapp)
-
 library(openair)
 
 umbs <- read.csv('/Users/stevengarrity/ScratchProjects/Ameriflux-Analysis/AMF_US-UMB_BASE_HR_10-1.csv', skip = 2, header = TRUE)
@@ -44,7 +42,7 @@ umbs14daily <- timeAverage(umbs14, avg.time="day")
 
 dNEEdaily <- ts(umbs14daily$NEE_PI, start=umbs14daily$timestamp[1], frequency=365)
 dNEEdaily <- na.seadec(dNEEdaily)
-plot(stl(dNEEdaily, s.window="periodic", t.window=365))
+plot(stl(dNEEdaily, s.window="periodic", t.window=365), labels = c("NEE","Seasonal","Trend","Residual"))
 
 
 
