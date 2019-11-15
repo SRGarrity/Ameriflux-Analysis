@@ -12,8 +12,8 @@ ui <- fluidPage(
     sidebarPanel(
       
       #Copy the line below to make a select box 
-      selectInput("select", label = h3("Trend Time Window"), 
-                  choices = list("365 days", "731 days"), 
+      selectInput("select", label = h3("Choose Averaging Period"), 
+                  choices = list("Daily", "Weekly", "Monthly"), 
                   selected = 1),
       hr(),
       fluidRow(column(3, verbatimTextOutput("value")))
